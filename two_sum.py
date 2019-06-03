@@ -1,3 +1,4 @@
+
 class Solution(object):
     def twoSum(self, nums, target):
         """
@@ -5,20 +6,19 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        count=0
+        count=1
         n1=0
-        n2=0
         L=[]
         for i in nums:
+            n2=count
             for j in nums[count:]:
-                n2=nums.index(j)
                 num=nums[n1]+nums[n2]
-                L.append((n1,n2,num))
+                if num==target:
+                    return [n1,n2]
+                    # L.append((n1,n2,num))
                 n2+=1
             count+=1
             n1+=1
-        for k in L:
-            if k[2]==target:
                 return [k[0],k[1]]
             
 sol=Solution()
